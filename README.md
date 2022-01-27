@@ -2,4 +2,13 @@
 
 Q4 Projekt - Pathfinding Visualiziation
 
-Hallo
+## Projekt Ziele
+
+## TODOs
+
+    - [] Grid
+    - [] Graph
+    - [] Labyrinth
+    - [] Lösen
+    - [] Generieren
+    - [] Vergleichen
