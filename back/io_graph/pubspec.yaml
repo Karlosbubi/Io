@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  io_graph:
+    path: ../../back/
 
 dev_dependencies:
   flutter_test:
