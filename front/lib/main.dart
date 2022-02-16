@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import './grid.dart';
 import './picker.dart';
 
-void main() {
-  runApp(const MyApp());
-}
+void main() => runApp(const MyApp());
+
+int mode = 0; //TODO : Nicht mehr Global, State management
 
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -32,8 +32,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int mode = 0;
-
   var mainGrid = const Grid();
 
   @override

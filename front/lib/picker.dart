@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+int mode = 0;
+
 class Picker extends StatefulWidget {
   const Picker({Key? key}) : super(key: key);
 
@@ -8,8 +10,6 @@ class Picker extends StatefulWidget {
 }
 
 class _PickerState extends State<Picker> {
-  int mode = 0;
-
   void _cycleMode() {
     setState(() {
       if (mode < 4) {
