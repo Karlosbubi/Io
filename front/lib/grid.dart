@@ -1,4 +1,6 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:io_graph/io_graph.dart';
 
 import 'main.dart';
 
@@ -38,6 +40,17 @@ class _GridState extends State<Grid> {
       ),
     );
   }
+
+  //solve() { // TODO
+  //  //make graph
+  //  List<List<Node<int>>> gNodes;
+  //  for (int i = 0; i < size; i++) {
+  //    for (int j = 0; j < size; j++) {
+  //      Node n = Node(nodes[i + (j * size)].getValue() + 1);
+  //      gNodes[i][j] = n;
+  //    }
+  //  }
+  //}
 }
 
 class NodeWidget extends StatefulWidget {
@@ -45,15 +58,28 @@ class NodeWidget extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => _NodeWidgetState();
+
+  int getValue() {
+    return 0; //TODO get state out of here
+  }
 }
 
 class _NodeWidgetState extends State<NodeWidget> {
   int value = 0;
   var colour = Colors.lightGreen;
 
-  _obtainMode() {
+  update(int m) {
+    value = m;
+    _refresh();
+  }
+
+  int getValue() {
+    return value;
+  }
+
+  _refresh() {
     setState(() {
-      value = mode;
+      value = value;
       switch (value) {
         case 1:
           colour = Colors.yellow;
@@ -76,6 +102,11 @@ class _NodeWidgetState extends State<NodeWidget> {
           break;
       }
     });
+  }
+
+  _obtainMode() {
+    value = mode;
+    _refresh();
   }
 
   @override
