@@ -45,9 +45,10 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
           child: Row(
             children: [
+              const Picker(),
               Expanded(
                 child: mainGrid,
-              )
+              ),
             ],
           ),
         ));

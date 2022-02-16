@@ -10,8 +10,6 @@ class Picker extends StatefulWidget {
 class _PickerState extends State<Picker> {
   int mode = 0;
 
-  _PickerState(this.mode);
-
   void _cycleMode() {
     setState(() {
       if (mode < 4) {
