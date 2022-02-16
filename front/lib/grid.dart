@@ -10,10 +10,11 @@ class Grid extends StatefulWidget {
 }
 
 class _GridState extends State<Grid> {
-  final int size = 10;
+  static const int size = 20;
+  static const int count = size * size;
 
   var nodes =
-      List<NodeWidget>.filled(100, const NodeWidget()); //TODO: Dynamic Size
+      List<NodeWidget>.filled(count, const NodeWidget()); //TODO: Dynamic Size
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +28,8 @@ class _GridState extends State<Grid> {
           SliverPadding(
             padding: const EdgeInsets.all(20),
             sliver: SliverGrid.count(
-              crossAxisSpacing: 10,
-              mainAxisSpacing: 10,
+              crossAxisSpacing: 1,
+              mainAxisSpacing: 1,
               crossAxisCount: size,
               children: nodes,
             ),
@@ -66,6 +67,9 @@ class _NodeWidgetState extends State<NodeWidget> {
         case 4:
           colour = Colors.blueGrey;
           break;
+        case 5:
+          colour = Colors.lightBlue;
+          break;
         case 0:
         default:
           colour = Colors.lightGreen;
@@ -80,7 +84,7 @@ class _NodeWidgetState extends State<NodeWidget> {
       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(colour)),
       child: Text(
         value.toString(),
-        style: const TextStyle(fontSize: 20.0),
+        style: const TextStyle(fontSize: 15.0),
       ),
       onPressed: () => _obtainMode(),
     );
