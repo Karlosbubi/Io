@@ -1,7 +1,6 @@
 name: io_graph
 description: A new Flutter package project.
 version: 0.0.1
-homepage:
 
 environment:
   sdk: ">=2.16.0-134.5.beta <3.0.0"
@@ -10,8 +9,6 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-  io_graph:
-    path: ../../back/
 
 dev_dependencies:
   flutter_test:
