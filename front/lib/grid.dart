@@ -10,70 +10,49 @@ class Grid extends StatefulWidget {
 class _GridState extends State<Grid> {
   int mode = 0;
 
-  int b1 = 0;
-  int b2 = 0;
-  int b3 = 0;
+  final int size = 10;
 
-  _GridState();
+  var nodes = List<NodeWidget>.filled(100, const NodeWidget());
 
   @override
   Widget build(BuildContext context) {
     return CustomScrollView(
       primary: false,
-      slivers: <Widget>[
+      slivers: [
         SliverPadding(
           padding: const EdgeInsets.all(20),
           sliver: SliverGrid.count(
             crossAxisSpacing: 10,
             mainAxisSpacing: 10,
-            crossAxisCount: 3,
-            children: <Widget>[
-              Container(
-                margin: const EdgeInsets.all(25),
-                child: ElevatedButton(
-                  child: Text(
-                    b1.toString(),
-                    style: const TextStyle(fontSize: 20.0),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      b1 = mode!;
-                    });
-                  },
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(25),
-                child: ElevatedButton(
-                  child: Text(
-                    b2.toString(),
-                    style: const TextStyle(fontSize: 20.0),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      b2 = mode!;
-                    });
-                  },
-                ),
-              ),
-              Container(
-                margin: const EdgeInsets.all(25),
-                child: ElevatedButton(
-                  child: Text(
-                    b3.toString(),
-                    style: const TextStyle(fontSize: 20.0),
-                  ),
-                  onPressed: () {
-                    setState(() {
-                      b3 = mode!;
-                    });
-                  },
-                ),
-              ),
-            ],
+            crossAxisCount: size,
+            children: nodes,
           ),
         ),
       ],
+    );
+  }
+}
+
+class NodeWidget extends StatefulWidget {
+  const NodeWidget({Key? key}) : super(key: key);
+
+  @override
+  State<StatefulWidget> createState() => _NodeWidgetState();
+}
+
+class _NodeWidgetState extends State<NodeWidget> {
+  int value = 0;
+
+  _obtainNewValue() {}
+
+  @override
+  Widget build(BuildContext context) {
+    return ElevatedButton(
+      child: Text(
+        value.toString(),
+        style: const TextStyle(fontSize: 20.0),
+      ),
+      onPressed: _obtainNewValue(),
     );
   }
 }
