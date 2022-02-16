@@ -34,7 +34,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   int mode = 0;
 
-  var mainGrid = const Grid(mode);
+  var mainGrid = const Grid();
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +45,6 @@ class _MyHomePageState extends State<MyHomePage> {
         body: Center(
           child: Row(
             children: [
-              Picker(mode),
               Expanded(
                 child: mainGrid,
               )
