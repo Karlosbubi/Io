@@ -1,6 +1,9 @@
 library io_graph;
 
-///OG Clac
+// ignore: constant_identifier_names
+const int INT_MAX = 9007199254740991;
+
+/// OG Clac
 class Calculator {
   int addOne(int value) => value + 1;
 }
@@ -20,12 +23,18 @@ class Graph<T> {
 class Node<T> {
   T data;
 
+  List<Link> neighbours = List.empty(growable: true);
+
+  int reachCost = INT_MAX;
+  Node<T>? previous = null;
+
   Node(this.data);
 }
 
 class Link {
   int edgeCost;
-  Node<Object> node;
+  Node<Object> from;
+  Node<Object> to;
 
-  Link(this.edgeCost, this.node);
+  Link(this.edgeCost, this.from, this.to);
 }
