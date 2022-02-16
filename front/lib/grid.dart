@@ -16,19 +16,14 @@ class _GridState extends State<Grid> {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
-      primary: false,
-      slivers: [
-        SliverPadding(
-          padding: const EdgeInsets.all(20),
-          sliver: SliverGrid.count(
-            crossAxisSpacing: 10,
-            mainAxisSpacing: 10,
-            crossAxisCount: size,
-            children: nodes,
-          ),
-        ),
-      ],
+    return Container(
+      margin: const EdgeInsets.all(20),
+      child: GridView.count(
+        crossAxisSpacing: 10,
+        mainAxisSpacing: 10,
+        crossAxisCount: size,
+        children: nodes,
+      ),
     );
   }
 }

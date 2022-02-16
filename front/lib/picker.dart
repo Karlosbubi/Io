@@ -29,7 +29,7 @@ class _PickerState extends State<Picker> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20),
+      margin: const EdgeInsets.only(left: 20, right: 20),
       child: Column(
         children: [
           Container(
