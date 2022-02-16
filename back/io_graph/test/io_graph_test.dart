@@ -52,6 +52,7 @@ void main() {
 
     var graph = Graph({a, b, c, d, e, f, g}.toList());
 
-    graph.dikstra(b, f);
+    var result = graph.dikstra(b, f).toString();
+    expect(result, {b, c, g, f}.toList().toString());
   });
 }

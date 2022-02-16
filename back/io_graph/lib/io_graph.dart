@@ -2,8 +2,6 @@ library io_graph;
 
 import 'dart:core';
 
-import 'package:flutter/cupertino.dart';
-
 // ignore: constant_identifier_names
 const int INT_MAX = 9007199254740991;
 
@@ -20,24 +18,24 @@ class Graph<T> {
   Graph(this.nodes);
 
   List<Node<T>> dikstra(Node<T> start, Node<T> end) {
-    List<Node<T>> toCheck = List.empty(growable: true);
-    List<Node<T>> staged = List.empty(growable: true);
+    List<Node<T>> checking = {start}.toList();
+    List<Node<T>> checkNext = List.empty(growable: true);
 
     start.reachCost = 0;
-    toCheck.add(start);
 
-    while (toCheck.isNotEmpty) {
-      for (var i in toCheck) {
+    while (checking.isNotEmpty) {
+      for (var i in checking) {
         for (var n in i.neighbours) {
           if (i.reachCost + n.edgeCost < n.to.reachCost) {
             n.to.reachCost = i.reachCost + n.edgeCost;
             n.to.previous = i;
 
-            staged.add(n.to);
+            checkNext.add(n.to);
           }
         }
       }
-      toCheck.addAll(staged);
+      checking = checkNext;
+      checkNext = List.empty(growable: true);
     }
 
     //Build Path
@@ -46,6 +44,7 @@ class Graph<T> {
       path.add(tmp);
       tmp = tmp.previous;
     }
+    path.add(start);
     path = path.reversed.toList();
 
     return path;
