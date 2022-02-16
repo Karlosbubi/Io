@@ -21,7 +21,8 @@ class _GridState extends State<Grid> {
       height: MediaQuery.of(context).size.height,
       child: CustomScrollView(
         primary: false,
-        slivers: <Widget>[
+        shrinkWrap: true,
+        slivers: [
           SliverPadding(
             padding: const EdgeInsets.all(20),
             sliver: SliverGrid.count(
@@ -60,7 +61,7 @@ class _NodeWidgetState extends State<NodeWidget> {
         value.toString(),
         style: const TextStyle(fontSize: 20.0),
       ),
-      onPressed: _obtainNewValue(),
+      onPressed: () => _obtainNewValue(),
     );
   }
 }
