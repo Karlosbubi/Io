@@ -48,16 +48,36 @@ class NodeWidget extends StatefulWidget {
 
 class _NodeWidgetState extends State<NodeWidget> {
   int value = 0;
+  var colour = Colors.lightGreen;
 
   _obtainMode() {
     setState(() {
       value = mode;
+      switch (value) {
+        case 1:
+          colour = Colors.yellow;
+          break;
+        case 2:
+          colour = Colors.orange;
+          break;
+        case 3:
+          colour = Colors.red;
+          break;
+        case 4:
+          colour = Colors.blueGrey;
+          break;
+        case 0:
+        default:
+          colour = Colors.lightGreen;
+          break;
+      }
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    return OutlinedButton(
+    return ElevatedButton(
+      style: ButtonStyle(backgroundColor: MaterialStateProperty.all(colour)),
       child: Text(
         value.toString(),
         style: const TextStyle(fontSize: 20.0),
