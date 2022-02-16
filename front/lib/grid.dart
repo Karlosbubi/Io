@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-int mode = 0;
+import 'main.dart';
 
 class Grid extends StatefulWidget {
   const Grid({Key? key}) : super(key: key);
@@ -12,7 +12,8 @@ class Grid extends StatefulWidget {
 class _GridState extends State<Grid> {
   final int size = 10;
 
-  var nodes = List<NodeWidget>.filled(100, const NodeWidget());
+  var nodes =
+      List<NodeWidget>.filled(100, const NodeWidget()); //TODO: Dynamic Size
 
   @override
   Widget build(BuildContext context) {
@@ -48,7 +49,7 @@ class NodeWidget extends StatefulWidget {
 class _NodeWidgetState extends State<NodeWidget> {
   int value = 0;
 
-  _obtainNewValue() {
+  _obtainMode() {
     setState(() {
       value = mode;
     });
@@ -61,7 +62,7 @@ class _NodeWidgetState extends State<NodeWidget> {
         value.toString(),
         style: const TextStyle(fontSize: 20.0),
       ),
-      onPressed: () => _obtainNewValue(),
+      onPressed: () => _obtainMode(),
     );
   }
 }

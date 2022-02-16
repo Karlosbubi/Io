@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-int mode = 0;
+import './main.dart';
 
 class Picker extends StatefulWidget {
   const Picker({Key? key}) : super(key: key);
@@ -10,19 +10,19 @@ class Picker extends StatefulWidget {
 }
 
 class _PickerState extends State<Picker> {
-  void _cycleMode() {
+  void update(int m) {
+    setState(() {
+      mode = m;
+    });
+  }
+
+  void cycle() {
     setState(() {
       if (mode < 4) {
         mode++;
       } else {
         mode = 0;
       }
-    });
-  }
-
-  void _setMode(int m) {
-    setState(() {
-      mode = m;
     });
   }
 
@@ -35,32 +35,32 @@ class _PickerState extends State<Picker> {
           Container(
               margin: const EdgeInsets.only(top: 50),
               child: ElevatedButton(
-                  onPressed: () => _cycleMode(),
+                  onPressed: () => cycle(),
                   child: Text("Mode : " + mode.toString()))),
           Container(
             margin: const EdgeInsets.only(top: 30),
             child: ElevatedButton(
-                onPressed: () => _setMode(0), child: const Text("0")),
+                onPressed: () => update(0), child: const Text("0")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: ElevatedButton(
-                onPressed: () => _setMode(1), child: const Text("1")),
+                onPressed: () => update(1), child: const Text("1")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: ElevatedButton(
-                onPressed: () => _setMode(2), child: const Text("2")),
+                onPressed: () => update(2), child: const Text("2")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: ElevatedButton(
-                onPressed: () => _setMode(3), child: const Text("3")),
+                onPressed: () => update(3), child: const Text("3")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
             child: ElevatedButton(
-                onPressed: () => _setMode(4), child: const Text("4")),
+                onPressed: () => update(4), child: const Text("4")),
           ),
         ],
       ),
