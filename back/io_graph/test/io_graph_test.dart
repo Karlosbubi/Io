@@ -20,9 +20,9 @@ void main() {
     var g = Node("g");
 
     a.neighbours.add(Link<String>(1, b));
-    a.neighbours.add(Link<String>(1, e));
+    a.neighbours.add(Link<String>(2, e));
 
-    b.neighbours.add(Link<String>(1, a));
+    b.neighbours.add(Link<String>(2, a));
     b.neighbours.add(Link<String>(3, e));
     b.neighbours.add(Link<String>(1, d));
     b.neighbours.add(Link<String>(2, c));
@@ -53,6 +53,7 @@ void main() {
     var graph = Graph({a, b, c, d, e, f, g}.toList());
 
     var result = graph.dikstra(b, f).toString();
+    print(result);
     expect(result, {b, c, g, f}.toList().toString());
   });
 }

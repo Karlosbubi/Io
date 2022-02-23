@@ -58,7 +58,7 @@ class Graph<T> {
 
     start.reachCost = 0;
 
-    nodes.forEach((i) {
+    for (var i in nodes) {
       var x = end.x - i.x;
       var y = end.y - i.y;
 
@@ -70,7 +70,7 @@ class Graph<T> {
       }
 
       i.distance = sqrt((y * y) + (x * x));
-    });
+    }
 
     while (checking.isNotEmpty) {
       for (var i in checking) {
@@ -114,6 +114,11 @@ class Node<T> {
 
   Node(this.data);
   //Node(this.data, this.x, this.y);
+
+  @override
+  String toString() {
+    return data.toString();
+  }
 }
 
 class Link<T> {
