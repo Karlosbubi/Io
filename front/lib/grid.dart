@@ -64,7 +64,7 @@ class NodeWidget extends StatefulWidget {
 }
 
 class _NodeWidgetState extends State<NodeWidget> {
-  int value = 0;
+  int value = 1;
   var colour = Colors.lightGreen;
 
   update(int m) {
@@ -80,22 +80,22 @@ class _NodeWidgetState extends State<NodeWidget> {
     setState(() {
       value = value;
       switch (value) {
-        case 1:
+        case 2:
           colour = Colors.yellow;
           break;
-        case 2:
+        case 3:
           colour = Colors.orange;
           break;
-        case 3:
+        case 4:
           colour = Colors.red;
           break;
-        case 4:
+        case 5:
           colour = Colors.blueGrey;
           break;
-        case 5:
+        case 6:
           colour = Colors.lightBlue;
           break;
-        case 0:
+        case 1:
         default:
           colour = Colors.lightGreen;
           break;

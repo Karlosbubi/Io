@@ -22,19 +22,19 @@ class _PickerState extends State<Picker> {
   void _colour() {
     setState(() {
       switch (mode) {
-        case 1:
+        case 2:
           colour = Colors.yellow;
           break;
-        case 2:
+        case 3:
           colour = Colors.orange;
           break;
-        case 3:
+        case 4:
           colour = Colors.red;
           break;
-        case 4:
+        case 5:
           colour = Colors.blueGrey;
           break;
-        case 0:
+        case 1:
         default:
           colour = Colors.lightGreen;
           break;
@@ -44,10 +44,10 @@ class _PickerState extends State<Picker> {
 
   void cycle() {
     setState(() {
-      if (mode < 4) {
+      if (mode < 5) {
         mode++;
       } else {
-        mode = 0;
+        mode = 1;
       }
     });
     _colour();
@@ -72,14 +72,6 @@ class _PickerState extends State<Picker> {
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Colors.lightGreen)),
-                onPressed: () => update(0),
-                child: const Text("0")),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.yellow)),
                 onPressed: () => update(1),
                 child: const Text("1")),
           ),
@@ -87,7 +79,7 @@ class _PickerState extends State<Picker> {
             margin: const EdgeInsets.only(top: 10),
             child: ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.orange)),
+                    backgroundColor: MaterialStateProperty.all(Colors.yellow)),
                 onPressed: () => update(2),
                 child: const Text("2")),
           ),
@@ -95,7 +87,7 @@ class _PickerState extends State<Picker> {
             margin: const EdgeInsets.only(top: 10),
             child: ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(Colors.red)),
+                    backgroundColor: MaterialStateProperty.all(Colors.orange)),
                 onPressed: () => update(3),
                 child: const Text("3")),
           ),
@@ -103,10 +95,18 @@ class _PickerState extends State<Picker> {
             margin: const EdgeInsets.only(top: 10),
             child: ElevatedButton(
                 style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all(Colors.blueGrey)),
+                    backgroundColor: MaterialStateProperty.all(Colors.red)),
                 onPressed: () => update(4),
                 child: const Text("4")),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor:
+                        MaterialStateProperty.all(Colors.blueGrey)),
+                onPressed: () => update(5),
+                child: const Text("5")),
           ),
         ],
       ),
