@@ -47,7 +47,7 @@ class _MyHomePageState extends State<MyHomePage> {
             const Picker(),
             Expanded(
               child: Column(
-                children: const [
+                children: [
                   Expanded(child: Grid()),
                   Expanded(child: Toolbar()),
                 ],
