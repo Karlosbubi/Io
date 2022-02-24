@@ -48,8 +48,8 @@ class _MyHomePageState extends State<MyHomePage> {
             Expanded(
               child: Column(
                 children: const [
-                  Grid(),
-                  Toolbar(),
+                  Expanded(child: Grid()),
+                  Expanded(child: Toolbar()),
                 ],
               ),
             ),
