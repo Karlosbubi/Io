@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import './main.dart';
+import './data.dart';
 
 class Picker extends StatefulWidget {
   const Picker({Key? key}) : super(key: key);

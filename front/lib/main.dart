@@ -5,8 +5,6 @@ import './picker.dart';
 
 void main() => runApp(const MyApp());
 
-int mode = 0; //TODO : Nicht mehr Global => State management
-
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 

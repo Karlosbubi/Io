@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:io_graph/io_graph.dart';
-
-import 'main.dart';
+import './data.dart';
 
 class Grid extends StatefulWidget {
   const Grid({Key? key}) : super(key: key);
@@ -11,11 +10,7 @@ class Grid extends StatefulWidget {
 }
 
 class _GridState extends State<Grid> {
-  static const int size = 20;
-  static const int count = size * size;
-
-  var nodes =
-      List<NodeWidget>.filled(count, const NodeWidget()); //TODO: Dynamic Size
+  //var nodes =  List<NodeWidget>.filled(count, const NodeWidget()); //TODO: Dynamic Size
 
   @override
   Widget build(BuildContext context) {
@@ -31,8 +26,12 @@ class _GridState extends State<Grid> {
             sliver: SliverGrid.count(
               crossAxisSpacing: 1,
               mainAxisSpacing: 1,
-              crossAxisCount: size,
-              children: nodes,
+              crossAxisCount: dataGrid.size,
+              children: List<NodeWidget>.generate(
+                  dataGrid.size * dataGrid.size,
+                  (index) => NodeWidget(
+                      dataGrid.values[(index / dataGrid.size).floor()]
+                          [index % dataGrid.size])),
             ),
           ),
         ],
@@ -53,7 +52,7 @@ class _GridState extends State<Grid> {
 }
 
 class NodeWidget extends StatefulWidget {
-  const NodeWidget({Key? key}) : super(key: key);
+  const NodeWidget(int value, {Key? key}) : super(key: key);
 
   @override
   State<StatefulWidget> createState() => _NodeWidgetState();
