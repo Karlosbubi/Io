@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
-import './grid.dart';
-import './picker.dart';
-import './data.dart';
+import 'grid.dart';
+import 'picker.dart';
+import 'data.dart';
+import 'toolbar.dart';
 
 void main() => runApp(const MyApp());
 
@@ -45,7 +46,12 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             const Picker(),
             Expanded(
-              child: Grid(),
+              child: Column(
+                children: const [
+                  Grid(),
+                  Toolbar(),
+                ],
+              ),
             ),
           ],
         ),
