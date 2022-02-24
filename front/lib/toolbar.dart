@@ -10,7 +10,9 @@ class Toolbar extends StatelessWidget {
     return Expanded(
       child: Row(
         children: [
-          ElevatedButton(onPressed: () => {}, child: const Text("Solve")),
+          ElevatedButton(
+              onPressed: () => {dataUpdate.broadcast()},
+              child: const Text("Solve")),
           ElevatedButton(
               onPressed: () => {dataUpdate.broadcast()},
               child: const Text("Resize")),
