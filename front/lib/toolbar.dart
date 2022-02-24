@@ -18,6 +18,7 @@ class Toolbar extends StatelessWidget {
                 onPressed: () => {dataUpdate.broadcast()},
                 child: const Text("Resize"))),
       ],
+
     );
   }
 }
