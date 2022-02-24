@@ -7,17 +7,18 @@ class Toolbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: Row(
-        children: [
-          ElevatedButton(
-              onPressed: () => {dataUpdate.broadcast()},
-              child: const Text("Solve")),
-          ElevatedButton(
-              onPressed: () => {dataUpdate.broadcast()},
-              child: const Text("Resize")),
-        ],
-      ),
+    return Row(
+      children: [
+        Expanded(
+            child: ElevatedButton(
+                onPressed: () => {dataUpdate.broadcast()},
+                child: const Text("Solve"))),
+        Expanded(
+            child: ElevatedButton(
+                onPressed: () => {dataUpdate.broadcast()},
+                child: const Text("Resize"))),
+      ],
+
     );
   }
 }
