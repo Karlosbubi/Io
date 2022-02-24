@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import './grid.dart';
 import './picker.dart';
+import './data.dart';
 
 void main() => runApp(const MyApp());
 
@@ -30,23 +31,25 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var mainGrid = const Grid();
-
   @override
   Widget build(BuildContext context) {
+    dataUpdate.subscribe((args) {
+      setState(() {});
+    });
     return Scaffold(
-        appBar: AppBar(
-          title: Text(widget.title),
+      appBar: AppBar(
+        title: Text(widget.title),
+      ),
+      body: Center(
+        child: Row(
+          children: [
+            const Picker(),
+            Expanded(
+              child: Grid(),
+            ),
+          ],
         ),
-        body: Center(
-          child: Row(
-            children: [
-              const Picker(),
-              Expanded(
-                child: mainGrid,
-              ),
-            ],
-          ),
-        ));
+      ),
+    );
   }
 }
