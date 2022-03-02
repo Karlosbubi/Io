@@ -5,51 +5,49 @@ gridToGraph() {
   var grid = GridService().values;
   var size = GridService().size;
 
-  Node<int>? start;
-  Node<int>? end;
-
-  var nodes = List<Node<int>>.empty(growable: true);
+  var nodes = List<List<Node<int>>>.empty(growable: true);
 
   for (var i = 0; i < size; i++) {
+    var row = List<Node<int>>.empty(growable: true);
     for (var j = 0; j < size; j++) {
       var value = grid[i][j];
       if (value == 5) {
         value = 99999;
       }
       Node<int> n = Node(value, i, j);
+      row.add(n);
+    }
+    nodes.add(row);
+  }
 
+  for (var i = 0; i < size; i++) {
+    for (var j = 0; j < 0; j++) {
       if (i != 0) {
-        n.neighbours.add(Link(value, nodes.last));
+        nodes[i][j].neighbours.add(Link(nodes[i][j].data, nodes[i - 1][j]));
+        nodes[i - 1][j].neighbours.add(Link(nodes[i - 1][j].data, nodes[i][j]));
       }
       if (j != 0) {
-        n.neighbours.add(Link(value, nodes.last));
+        nodes[i][j].neighbours.add(Link(nodes[i][j].data, nodes[i][j - 1]));
+        nodes[i][j - 1].neighbours.add(Link(nodes[i][j - 1].data, nodes[i][j]));
       }
-
-      if (i == GridService().startX && j == GridService().startY) {
-        start = n;
-      }
-      if (i == GridService().endX && j == GridService().endY) {
-        end = n;
-      }
-
-      nodes.add(n);
     }
   }
 
-  for (var item in nodes) {
-    for (var n in item.neighbours) {
-      n.to.neighbours.add(Link(item.data, item));
-    }
-  }
+  Node<int> start = nodes[GridService().startX][GridService().startY];
+  Node<int> end = nodes[GridService().endX][GridService().endY];
 
-  var graph = Graph(nodes, start!, end!);
-  //print(graph.toString());
+  var tmp = List<Node<int>>.empty(growable: true);
+  for (var l in nodes) {
+    tmp.addAll(l);
+  }
+  var graph = Graph(tmp, start, end);
+  print(graph.toString());
   return graph;
 }
 
 solveDikstra() {
   var graph = gridToGraph().dikstra();
-  print(graph.toString());
+  //print(graph.toString());
   return graph;
 }
 
