@@ -17,9 +17,12 @@ class Graph<T> {
   List<Node<T>> nodes = List.empty(growable: true);
   List<Node<T>> path = List.empty(growable: true);
 
-  Graph(this.nodes);
+  Graph(this.nodes, this.start, this.end);
 
-  List<Node<T>> dikstra(Node<T> start, Node<T> end) {
+  Node<T> start;
+  Node<T> end;
+
+  List<Node<T>> dikstra() {
     List<Node<T>> checking = {start}.toList();
     List<Node<T>> checkNext = List.empty(growable: true);
 
