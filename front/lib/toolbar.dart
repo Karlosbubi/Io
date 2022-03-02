@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'solve.dart';
 
 class Toolbar extends StatelessWidget {
   const Toolbar({Key? key}) : super(key: key);
@@ -9,7 +10,7 @@ class Toolbar extends StatelessWidget {
       children: [
         Expanded(
             child: ElevatedButton(
-                onPressed: () => {}, child: const Text("Solve"))),
+                onPressed: displaySolve(), child: const Text("Solve"))),
         Expanded(
             child: ElevatedButton(
                 onPressed: () => {}, child: const Text("Resize"))),
