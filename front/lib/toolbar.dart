@@ -14,7 +14,7 @@ class Toolbar extends StatelessWidget {
       child: Column(
         children: [
           Container(
-              margin: const EdgeInsets.only(top: 250, bottom: 15),
+              margin: const EdgeInsets.only(top: 200, bottom: 15),
               width: 100,
               child: ElevatedButton(
                   style: ButtonStyle(
@@ -40,6 +40,23 @@ class Toolbar extends StatelessWidget {
                           MaterialStateProperty.all(Colors.blueAccent)),
                   onPressed: () => GridService().gridFill(),
                   child: const Text("Fill"))),
+          Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 15),
+              width: 100,
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.black)),
+                  onPressed: () => GridService().gridClear(),
+                  child: const Text("Clear"))),
+          /* Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 15),
+              width: 100,
+              child: ElevatedButton(
+                  style: ButtonStyle(
+                      backgroundColor: MaterialStateProperty.all(Colors.grey)),
+                  onPressed: () => GridService().gridSZ(),
+                  child: const Text("Random SZ"))),
+                  */
         ],
       ),
     );

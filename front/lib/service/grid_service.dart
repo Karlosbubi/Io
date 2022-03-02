@@ -23,7 +23,7 @@ class GridService {
   }
 
   int mode = 1;
-  int size = 20;
+  int size = 40;
   late List<List<int>> values;
 
   int startX = 0;
@@ -65,7 +65,7 @@ class GridService {
         return Colors.blueGrey;
 
       case 6:
-        return Colors.pink;
+        return Colors.lightBlueAccent;
 
       case 98:
         return Colors.purple;
@@ -86,10 +86,32 @@ class GridService {
       for (int k = 0; k < size; k++) {
         int b = 0;
         var a = Random();
-        b = a.nextInt(5);
+        b = a.nextInt(6);
         values[k][i] = b;
       }
-      print(i);
+      //print(i);
+    }
+  }
+
+  gridClear() {
+    for (int i = 0; i < size; i++) {
+      for (int k = 0; k < size; k++) {
+        values[k][i] = 1;
+      }
+      //print(i);
     }
   }
 }
+
+ /* gridSZ() {
+    for (int i = 0; i < size; i++) {
+      for (int k = 0; k < size; k++) {
+        int b = 0;
+        var a = Random();
+        b = a.nextInt(6);
+        values[k][i] = b;
+      }
+      //print(i);
+    }
+    */
+  
