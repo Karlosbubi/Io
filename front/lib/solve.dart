@@ -1,4 +1,3 @@
-import 'package:event/event.dart';
 import 'package:front/service/grid_service.dart';
 import 'package:io_graph/io_graph.dart';
 
@@ -6,15 +5,15 @@ gridToGraph() {
   var grid = GridService().values;
   var size = GridService().size;
 
-  var start;
-  var end;
+  Node<int>? start;
+  Node<int>? end;
 
   var nodes = List<Node<int>>.empty(growable: true);
 
   for (var i = 0; i < size; i++) {
     for (var j = 0; j < size; j++) {
       var value = grid[i][j];
-      Node<int> n = Node(value);
+      Node<int> n = Node(value, i, j);
 
       if (i != 0) {
         n.neighbours.add(Link(value, nodes.last));
@@ -40,9 +39,17 @@ gridToGraph() {
     }
   }
 
-  return Graph(nodes, start, end);
+  return Graph(nodes, start!, end!);
 }
 
 solveDikstra() {
   return gridToGraph().dikstra();
+}
+
+displaySolve() {
+  var path = solveDikstra();
+
+  for (var node in path) {
+    GridService().values[node.x][node.x] = 6;
+  }
 }

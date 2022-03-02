@@ -11,13 +11,13 @@ void main() {
   });
 
   test('Dikstra', () {
-    var a = Node("a");
-    var b = Node("b");
-    var c = Node("c");
-    var d = Node("d");
-    var e = Node("e");
-    var f = Node("f");
-    var g = Node("g");
+    var a = Node("a", 0, 0);
+    var b = Node("b", 0, 0);
+    var c = Node("c", 0, 0);
+    var d = Node("d", 0, 0);
+    var e = Node("e", 0, 0);
+    var f = Node("f", 0, 0);
+    var g = Node("g", 0, 0);
 
     a.neighbours.add(Link<String>(1, b));
     a.neighbours.add(Link<String>(2, e));

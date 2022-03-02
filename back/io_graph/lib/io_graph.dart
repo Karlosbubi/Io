@@ -115,8 +115,8 @@ class Node<T> {
   int x = 0;
   int y = 0;
 
-  Node(this.data);
-  //Node(this.data, this.x, this.y);
+  //Node(this.data);
+  Node(this.data, this.x, this.y);
 
   @override
   String toString() {
