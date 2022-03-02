@@ -21,7 +21,7 @@ gridToGraph() {
   }
 
   for (var i = 0; i < size; i++) {
-    for (var j = 0; j < 0; j++) {
+    for (var j = 0; j < size; j++) {
       if (i != 0) {
         nodes[i][j].neighbours.add(Link(nodes[i][j].data, nodes[i - 1][j]));
         nodes[i - 1][j].neighbours.add(Link(nodes[i - 1][j].data, nodes[i][j]));
@@ -41,7 +41,7 @@ gridToGraph() {
     tmp.addAll(l);
   }
   var graph = Graph(tmp, start, end);
-  print(graph.toString());
+  //print(graph.toString());
   return graph;
 }
 
@@ -55,9 +55,12 @@ displaySolve() {
   var path = solveDikstra();
 
   for (var node in path) {
-    if ((node.x != GridService().startX && node.y != GridService().startY) ||
-        (node.x != GridService().endX && node.y != GridService().endY)) {
-      GridService().values[node.x][node.x] = 6;
+    if (!((node.x == GridService().startX && node.y == GridService().startY) ||
+        (node.x == GridService().endX && node.y == GridService().endY))) {
+      //print(node.x);
+      //print(node.y);
+      //print("---");
+      GridService().values[node.x][node.y] = 6;
     }
   }
 }
