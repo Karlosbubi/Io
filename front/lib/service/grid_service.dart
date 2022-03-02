@@ -30,6 +30,20 @@ class GridService {
   int endY = 0;
 
   void updateColor(int x, int y) {
+    if (mode == 99) {
+      mode = 1;
+      updateColor(startX, startY);
+      startX = x;
+      startY = y;
+      mode = 99;
+    }
+    if (mode == 100) {
+      mode = 1;
+      updateColor(endX, endY);
+      endX = x;
+      endY = y;
+      mode = 100;
+    }
     values[x][y] = mode;
   }
 
@@ -49,6 +63,12 @@ class GridService {
 
       case 6:
         return Colors.pink;
+
+      case 99:
+        return Colors.purple;
+
+      case 100:
+        return Colors.deepPurple;
 
       case 1:
       default:
