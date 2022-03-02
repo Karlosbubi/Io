@@ -53,6 +53,9 @@ displaySolve() {
   var path = solveDikstra();
 
   for (var node in path) {
-    GridService().values[node.x][node.x] = 6;
+    if ((node.x != GridService().startX && node.y != GridService().startY) ||
+        (node.x != GridService().endX && node.y != GridService().endY)) {
+      GridService().values[node.x][node.x] = 6;
+    }
   }
 }
