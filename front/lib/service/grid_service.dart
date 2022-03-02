@@ -41,6 +41,12 @@ class GridService {
       case 5:
         return Colors.blueGrey;
 
+      case 99:
+        return Colors.purple;
+
+      case 100:
+        return Colors.deepPurple;
+
       case 1:
       default:
         return Colors.lightGreen;

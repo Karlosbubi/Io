@@ -42,7 +42,25 @@ class _PickerState extends State<Picker> {
       child: Column(
         children: [
           Container(
-              margin: const EdgeInsets.only(top: 50),
+            margin: const EdgeInsets.only(top: 50),
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(99))),
+                onPressed: () => update(99),
+                child: Text("Start")),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(100))),
+                onPressed: () => update(100),
+                child: Text("Ziel")),
+          ),
+          Container(
+              margin: const EdgeInsets.only(top: 10, bottom: 15),
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(colour)),
@@ -50,7 +68,7 @@ class _PickerState extends State<Picker> {
                   child: Text("Mode : ${GridService().mode}"))),
           for (int i = 1; i < 6; i++)
             Container(
-              margin: const EdgeInsets.only(top: 30),
+              margin: const EdgeInsets.only(top: 15),
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(
