@@ -1,7 +1,6 @@
 library io_graph;
 
 import 'dart:core';
-
 import 'dart:math';
 
 // ignore: constant_identifier_names
@@ -100,6 +99,28 @@ class Graph<T> {
     path = path.reversed.toList();
 
     return path;
+  }
+
+  /*@override
+  String toString() {
+    var msg = "";
+    for (var node in nodes) {
+      msg += node.toString();
+      msg += "\n";
+      for (var n in node.neighbours) {
+        msg += "\t - ";
+        msg += n.to.toString();
+        msg += "\n";
+      }
+      msg += "\n";
+    }
+    return msg;
+  }*/
+  @override
+  String toString() {
+    var msg = "";
+
+    return msg;
   }
 }
 
