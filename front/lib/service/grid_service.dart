@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:front/grid.dart';
 
 class GridService {
   static final GridService _singleton = GridService._();
@@ -80,15 +81,15 @@ class GridService {
 
   Color get activeColor => modeToColor(mode);
 
-  Gridfill() {
-    for (int i = 0; i <= size; i++) {
-      for (int k = 0; k <= size; k++) {
+  gridFill() {
+    for (int i = 0; i < size; i++) {
+      for (int k = 0; k < size; k++) {
         int b = 0;
         var a = Random();
         b = a.nextInt(5);
-        mode = b;
-        updateColor(i, k);
+        values[k][i] = b;
       }
+      print(i);
     }
   }
 }

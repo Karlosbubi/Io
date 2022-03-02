@@ -38,7 +38,7 @@ class Toolbar extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.blueAccent)),
-                  onPressed: () => GridService().Gridfill,
+                  onPressed: () => GridService().gridFill(),
                   child: const Text("Fill"))),
         ],
       ),
