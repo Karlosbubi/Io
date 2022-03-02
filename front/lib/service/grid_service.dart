@@ -23,6 +23,12 @@ class GridService {
   int size = 20;
   late List<List<int>> values;
 
+  int startX = 0;
+  int startY = 0;
+
+  int endX = 0;
+  int endY = 0;
+
   void updateColor(int x, int y) {
     values[x][y] = mode;
   }
@@ -40,6 +46,9 @@ class GridService {
 
       case 5:
         return Colors.blueGrey;
+
+        return Colors.pink;
+      case 6:
 
       case 99:
         return Colors.purple;
