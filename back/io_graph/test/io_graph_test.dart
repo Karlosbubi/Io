@@ -50,9 +50,9 @@ void main() {
     g.neighbours.add(Link<String>(3, e));
     g.neighbours.add(Link<String>(2, f));
 
-    var graph = Graph({a, b, c, d, e, f, g}.toList());
+    var graph = Graph({a, b, c, d, e, f, g}.toList(), b, f);
 
-    var result = graph.dikstra(b, f).toString();
+    var result = graph.dikstra().toString();
     //print(result);
     expect(result, {b, c, g, f}.toList().toString());
   });
