@@ -1,8 +1,19 @@
 import 'package:flutter/material.dart';
-import './data.dart';
+import 'package:front/service/grid_service.dart';
 
-class Grid extends StatelessWidget {
+class Grid extends StatefulWidget {
   const Grid({Key? key}) : super(key: key);
+
+  @override
+  State<Grid> createState() => _GridState();
+}
+
+class _GridState extends State<Grid> {
+  void _refresh(int x, int y) {
+    setState(() {
+      GridService().updateColor(x, y);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -18,11 +29,21 @@ class Grid extends StatelessWidget {
             sliver: SliverGrid.count(
               crossAxisSpacing: 1,
               mainAxisSpacing: 1,
-              crossAxisCount: dataGrid.size,
+              crossAxisCount: GridService().size,
               children: List<NodeWidget>.generate(
-                dataGrid.size * dataGrid.size,
-                (index) => NodeWidget(
-                    (index % dataGrid.size), (index / dataGrid.size).floor()),
+                GridService().size * GridService().size,
+                (index) {
+                  int x = (index % GridService().size);
+                  int y = (index / GridService().size).floor();
+
+                  return NodeWidget(
+                    x,
+                    y,
+                    GridService().values[x][y],
+                    GridService().modeToColor(GridService().values[x][y]),
+                    update: _refresh,
+                  );
+                },
               ),
             ),
           ),
@@ -33,47 +54,31 @@ class Grid extends StatelessWidget {
 }
 
 class NodeWidget extends StatelessWidget {
-  late final int value;
   final int x;
   final int y;
-  late final MaterialColor colour;
+  final int value;
+  final Color colour;
 
-  NodeWidget(this.x, this.y, {Key? key}) : super(key: key) {
-    value = dataGrid.values[x][y];
-    switch (value) {
-      case 2:
-        colour = Colors.yellow;
-        break;
-      case 3:
-        colour = Colors.orange;
-        break;
-      case 4:
-        colour = Colors.red;
-        break;
-      case 5:
-        colour = Colors.blueGrey;
-        break;
-      case 1:
-      default:
-        colour = Colors.lightGreen;
-        break;
-    }
-  }
+  final Function(int, int) update;
 
-  refresh() {
-    dataGrid.values[x][y] = mode;
-    dataUpdate.broadcast();
-  }
+  NodeWidget(
+    this.x,
+    this.y,
+    this.value,
+    this.colour, {
+    Key? key,
+    required this.update,
+  });
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(colour)),
       child: Text(
-        value.toString(),
+        "$value",
         style: const TextStyle(fontSize: 15.0),
       ),
-      onPressed: () => refresh(),
+      onPressed: () => update(x, y),
     );
   }
 }

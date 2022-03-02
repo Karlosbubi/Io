@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import 'grid.dart';
 import 'picker.dart';
-import 'data.dart';
 import 'toolbar.dart';
 
 void main() => runApp(const MyApp());
@@ -34,9 +33,6 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    dataUpdate.subscribe((args) {
-      setState(() {});
-    });
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
