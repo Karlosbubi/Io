@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class GridService {
@@ -64,10 +66,10 @@ class GridService {
       case 6:
         return Colors.pink;
 
-      case 99:
+      case 98:
         return Colors.purple;
 
-      case 100:
+      case 99:
         return Colors.deepPurple;
 
       case 1:
@@ -77,4 +79,16 @@ class GridService {
   }
 
   Color get activeColor => modeToColor(mode);
+
+  Gridfill() {
+    for (int i = 0; i <= size; i++) {
+      for (int k = 0; k <= size; k++) {
+        int b = 0;
+        var a = Random();
+        b = a.nextInt(5);
+        mode = b;
+        updateColor(i, k);
+      }
+    }
+  }
 }

@@ -38,44 +38,87 @@ class _PickerState extends State<Picker> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 20, right: 20),
+      margin: const EdgeInsets.only(left: 5, right: 0),
       child: Column(
         children: [
           Container(
             margin: const EdgeInsets.only(top: 50),
+            width: 100,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(98))),
+                onPressed: () => update(98),
+                child: Text("Start")),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 10),
+            width: 100,
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(99))),
                 onPressed: () => update(99),
-                child: Text("Start")),
-          ),
-          Container(
-            margin: const EdgeInsets.only(top: 10),
-            child: ElevatedButton(
-                style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(100))),
-                onPressed: () => update(100),
                 child: Text("Ziel")),
           ),
           Container(
-              margin: const EdgeInsets.only(top: 10, bottom: 15),
+              margin: const EdgeInsets.only(top: 10, bottom: 150),
+              width: 100,
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(colour)),
                   onPressed: () => cycle(),
                   child: Text("Mode : ${GridService().mode}"))),
-          for (int i = 1; i < 6; i++)
-            Container(
-              margin: const EdgeInsets.only(top: 15),
-              child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
-                          GridService().modeToColor(i))),
-                  onPressed: () => update(i),
-                  child: Text("$i")),
-            ),
+          Container(
+            margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
+            width: 100,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(1))),
+                onPressed: () => update(1),
+                child: Text("Strasse")),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
+            width: 100,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(2))),
+                onPressed: () => update(2),
+                child: Text("Weg")),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
+            width: 100,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(3))),
+                onPressed: () => update(3),
+                child: Text("Wald")),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
+            width: 100,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(4))),
+                onPressed: () => update(4),
+                child: Text("Gebirge")),
+          ),
+          Container(
+            margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
+            width: 100,
+            child: ElevatedButton(
+                style: ButtonStyle(
+                    backgroundColor: MaterialStateProperty.all(
+                        GridService().modeToColor(5))),
+                onPressed: () => update(5),
+                child: Text("Schlucht")),
+          ),
         ],
       ),
     );

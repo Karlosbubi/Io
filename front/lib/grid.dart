@@ -18,14 +18,14 @@ class _GridState extends State<Grid> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.all(10),
       height: MediaQuery.of(context).size.height,
       child: CustomScrollView(
         primary: false,
         shrinkWrap: true,
         slivers: [
           SliverPadding(
-            padding: const EdgeInsets.all(20),
+            padding: const EdgeInsets.all(10),
             sliver: SliverGrid.count(
               crossAxisSpacing: 1,
               mainAxisSpacing: 1,
@@ -75,7 +75,7 @@ class NodeWidget extends StatelessWidget {
     return ElevatedButton(
       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(colour)),
       child: Text(
-        "$value",
+        " ",
         style: const TextStyle(fontSize: 15.0),
       ),
       onPressed: () => update(x, y),
