@@ -6,15 +6,19 @@ class Toolbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-      children: [
-        Expanded(
-            child: ElevatedButton(
-                onPressed: displaySolve(), child: const Text("Solve"))),
-        Expanded(
-            child: ElevatedButton(
-                onPressed: () => {}, child: const Text("Resize"))),
-      ],
+    return Container(
+      margin: const EdgeInsets.only(right: 10),
+      height: 40,
+      child: Column(
+        children: [
+          Expanded(
+              child: ElevatedButton(
+                  onPressed: () => displaySolve(), child: const Text("Solve"))),
+          Expanded(
+              child: ElevatedButton(
+                  onPressed: () => {}, child: const Text("Resize"))),
+        ],
+      ),
     );
   }
 }

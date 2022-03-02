@@ -13,6 +13,9 @@ gridToGraph() {
   for (var i = 0; i < size; i++) {
     for (var j = 0; j < size; j++) {
       var value = grid[i][j];
+      if (value == 5) {
+        value = 99999;
+      }
       Node<int> n = Node(value, i, j);
 
       if (i != 0) {

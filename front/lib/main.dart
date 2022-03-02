@@ -39,16 +39,10 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Center(
         child: Row(
-          children: [
-            const Picker(),
-            Expanded(
-              child: Column(
-                children: const [
-                  Expanded(child: Grid()),
-                  Expanded(child: Toolbar()),
-                ],
-              ),
-            ),
+          children: const [
+            Picker(),
+            Expanded(child: Grid()),
+            Toolbar(),
           ],
         ),
       ),
