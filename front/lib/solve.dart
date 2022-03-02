@@ -42,11 +42,15 @@ gridToGraph() {
     }
   }
 
-  return Graph(nodes, start!, end!);
+  var graph = Graph(nodes, start!, end!);
+  //print(graph.toString());
+  return graph;
 }
 
 solveDikstra() {
-  return gridToGraph().dikstra();
+  var graph = gridToGraph().dikstra();
+  print(graph.toString());
+  return graph;
 }
 
 displaySolve() {
