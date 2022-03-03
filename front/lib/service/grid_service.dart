@@ -23,7 +23,7 @@ class GridService {
   }
 
   int mode = 1;
-  int size = 40;
+  int size = 20;
   late List<List<int>> values;
 
   int startX = 0;
@@ -31,7 +31,18 @@ class GridService {
 
   int endX = 0;
   int endY = 0;
+  // die hier müssen noch definiert werden und nicht unbedingt als Variable abgespeichert sein
 
+  static const int Strasse = 1;
+  static const int Weg = 2;
+  static const int Wald = 3;
+  static const int Berg = 4;
+  static const int Schlucht = 5;
+  static const int Start = 98;
+  static const int Ziel = 99;
+  static const int Path = 6;
+
+  //
   void updateColor(int x, int y) {
     if (mode == 99) {
       mode = 1;
@@ -52,28 +63,28 @@ class GridService {
 
   Color modeToColor(int m) {
     switch (m) {
-      case 2:
+      case Weg:
         return Colors.yellow;
 
-      case 3:
+      case Wald:
         return Colors.orange;
 
-      case 4:
+      case Berg:
         return Colors.red;
 
-      case 5:
+      case Schlucht:
         return Colors.blueGrey;
 
-      case 6:
+      case Path:
         return Colors.lightBlueAccent;
 
-      case 98:
+      case Start:
         return Colors.purple;
 
-      case 99:
+      case Ziel:
         return Colors.deepPurple;
 
-      case 1:
+      case Strasse:
       default:
         return Colors.lightGreen;
     }

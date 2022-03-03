@@ -55,7 +55,7 @@ class Toolbar extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.grey)),
                   onPressed: () => GridService().gridSZ(),
-                  child: const Text("Random SZ"))),
+                  child: const Text("Random Start/Ziel"))),
                   */
         ],
       ),
