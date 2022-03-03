@@ -40,7 +40,7 @@ class GridService {
   static const int Schlucht = 5;
   static const int Start = 98;
   static const int Ziel = 99;
-  static const int Path = 6;
+  static const int Path = 0;
 
   //
   void updateColor(int x, int y) {
@@ -97,8 +97,8 @@ class GridService {
       for (int k = 0; k < size; k++) {
         int b = 0;
         var a = Random();
-        b = a.nextInt(6);
-        values[k][i] = b;
+        b = a.nextInt(5);
+        values[k][i] = b + 1;
       }
       //print(i);
     }
@@ -112,17 +112,17 @@ class GridService {
       //print(i);
     }
   }
-}
 
- /* gridSZ() {
-    for (int i = 0; i < size; i++) {
-      for (int k = 0; k < size; k++) {
-        int b = 0;
-        var a = Random();
-        b = a.nextInt(6);
-        values[k][i] = b;
-      }
-      //print(i);
+  gridSZ() {
+    int b = 0;
+    int c = 0;
+    int d = 98;
+    var a = Random();
+    for (int i = 0; i < 2; i++) {
+      b = a.nextInt(size);
+      c = a.nextInt(size);
+      values[b][c] = d;
+      d++;
     }
-    */
-  
+  }
+}

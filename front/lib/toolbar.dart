@@ -48,7 +48,7 @@ class Toolbar extends StatelessWidget {
                       backgroundColor: MaterialStateProperty.all(Colors.black)),
                   onPressed: () => GridService().gridClear(),
                   child: const Text("Clear"))),
-          /* Container(
+          Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
               width: 100,
               child: ElevatedButton(
@@ -56,7 +56,6 @@ class Toolbar extends StatelessWidget {
                       backgroundColor: MaterialStateProperty.all(Colors.grey)),
                   onPressed: () => GridService().gridSZ(),
                   child: const Text("Random Start/Ziel"))),
-                  */
         ],
       ),
     );
