@@ -60,7 +60,7 @@ displaySolve() {
       //print(node.x);
       //print(node.y);
       //print("---");
-      GridService().values[node.x][node.y] = 6;
+      GridService().values[node.x][node.y] = 0;
     }
   }
 }

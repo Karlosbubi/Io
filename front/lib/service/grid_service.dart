@@ -23,7 +23,7 @@ class GridService {
   }
 
   int mode = 1;
-  int size = 20;
+  int size = 50;
   late List<List<int>> values;
 
   int startX = 0;
@@ -97,7 +97,7 @@ class GridService {
     for (int i = 0; i < size; i++) {
       for (int k = 0; k < size; k++) {
         var a = Random();
-        mode = a.nextInt(5);
+        mode = a.nextInt(5) + 1;
         updateColor(k, i);
       }
     }
