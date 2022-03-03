@@ -93,36 +93,41 @@ class GridService {
   Color get activeColor => modeToColor(mode);
 
   gridFill() {
+    int speicher = mode;
     for (int i = 0; i < size; i++) {
       for (int k = 0; k < size; k++) {
-        int b = 0;
         var a = Random();
-        b = a.nextInt(5);
-        values[k][i] = b + 1;
+        mode = a.nextInt(5);
+        updateColor(k, i);
       }
-      //print(i);
     }
+    mode = speicher;
   }
 
   gridClear() {
+    int speicher = mode;
+    mode = 1;
     for (int i = 0; i < size; i++) {
       for (int k = 0; k < size; k++) {
-        values[k][i] = 1;
+        updateColor(k, i);
       }
-      //print(i);
     }
+    mode = speicher;
   }
 
   gridSZ() {
     int b = 0;
     int c = 0;
     int d = 98;
+    int speicher = mode;
     var a = Random();
     for (int i = 0; i < 2; i++) {
       b = a.nextInt(size);
       c = a.nextInt(size);
-      values[b][c] = d;
+      mode = d;
+      updateColor(b, c);
       d++;
     }
+    mode = speicher;
   }
 }
