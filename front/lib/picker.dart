@@ -49,7 +49,7 @@ class _PickerState extends State<Picker> {
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(98))),
                 onPressed: () => update(98),
-                child: Text("Start")),
+                child: const Text("Start")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 10),
@@ -59,7 +59,7 @@ class _PickerState extends State<Picker> {
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(99))),
                 onPressed: () => update(99),
-                child: Text("Ziel")),
+                child: const Text("Ziel")),
           ),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 150),
@@ -77,7 +77,7 @@ class _PickerState extends State<Picker> {
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(1))),
                 onPressed: () => update(1),
-                child: Text("Strasse")),
+                child: const Text("Strasse")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
@@ -87,7 +87,7 @@ class _PickerState extends State<Picker> {
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(2))),
                 onPressed: () => update(2),
-                child: Text("Weg")),
+                child: const Text("Weg")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
@@ -97,7 +97,7 @@ class _PickerState extends State<Picker> {
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(3))),
                 onPressed: () => update(3),
-                child: Text("Wald")),
+                child: const Text("Wald")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
@@ -107,7 +107,7 @@ class _PickerState extends State<Picker> {
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(4))),
                 onPressed: () => update(4),
-                child: Text("Gebirge")),
+                child: const Text("Gebirge")),
           ),
           Container(
             margin: const EdgeInsets.only(top: 15, left: 0, right: 0),
@@ -117,7 +117,7 @@ class _PickerState extends State<Picker> {
                     backgroundColor: MaterialStateProperty.all(
                         GridService().modeToColor(5))),
                 onPressed: () => update(5),
-                child: Text("Schlucht")),
+                child: const Text("Schlucht")),
           ),
         ],
       ),
