@@ -134,4 +134,8 @@ class GridService {
     }
     mode = speicher;
   }
+
+  gridResize(int a) {
+    size = a;
+  }
 }
