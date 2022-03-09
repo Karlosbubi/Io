@@ -64,7 +64,7 @@ class NodeWidget extends StatelessWidget {
 
   final Function(int, int) update;
 
-  NodeWidget(
+  const NodeWidget(
     this.x,
     this.y,
     this.value,
@@ -77,9 +77,9 @@ class NodeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       style: ButtonStyle(backgroundColor: MaterialStateProperty.all(colour)),
-      child: Text(
+      child: const Text(
         " ",
-        style: const TextStyle(fontSize: 15.0),
+        style: TextStyle(fontSize: 15.0),
       ),
       onPressed: () => update(x, y),
     );

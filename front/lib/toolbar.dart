@@ -29,15 +29,6 @@ class Toolbar extends StatelessWidget {
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor:
-                          MaterialStateProperty.all(Colors.yellow)),
-                  onPressed: () => {GridService().update.broadcast()},
-                  child: const Text("Resize"))),
-          Container(
-              margin: const EdgeInsets.only(top: 10, bottom: 15),
-              width: 100,
-              child: ElevatedButton(
-                  style: ButtonStyle(
-                      backgroundColor:
                           MaterialStateProperty.all(Colors.blueAccent)),
                   onPressed: () {
                     GridService().gridFill();
@@ -66,6 +57,45 @@ class Toolbar extends StatelessWidget {
                     GridService().update.broadcast();
                   },
                   child: const Text("Random Start/Ziel"))),
+          Container(
+              margin: const EdgeInsets.only(top: 50, bottom: 15),
+              padding: const EdgeInsets.only(top: 10),
+              width: 100,
+              decoration: BoxDecoration(
+                //color: Colors.yellowAccent,
+                border: Border.all(color: Colors.black),
+                //boxShadow: [BoxShadow(color: Colors.amber)],
+              ),
+              child: Column(
+                children: [
+                  ElevatedButton(
+                      style: ButtonStyle(
+                          backgroundColor:
+                              MaterialStateProperty.all(Colors.yellow)),
+                      onPressed: () {
+                        GridService().makeValues(GridService().size);
+                        GridService().update.broadcast();
+                      },
+                      child: const Text("Resize")),
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    child: TextFormField(
+                      //initialValue: "20",
+                      decoration: const InputDecoration(
+                          hintText: "Size",
+                          focusedBorder: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.deepOrangeAccent)),
+                          border: OutlineInputBorder(
+                              borderSide:
+                                  BorderSide(color: Colors.yellowAccent))),
+                      onChanged: (content) {
+                        GridService().size = int.parse(content);
+                      },
+                    ),
+                  ),
+                ],
+              )),
         ],
       ),
     );

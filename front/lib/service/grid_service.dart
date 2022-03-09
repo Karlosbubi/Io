@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+// ignore: unused_import
 import 'package:front/grid.dart';
 // dart code file
 import 'package:event/event.dart';
@@ -12,6 +13,10 @@ class GridService {
   }
 
   GridService._() {
+    makeValues(size);
+  }
+
+  makeValues(int s) {
     values = [];
 
     for (int x = 0; x < size; x++) {
@@ -37,58 +42,56 @@ class GridService {
   int endY = 0;
   // die hier müssen noch definiert werden und nicht unbedingt als Variable abgespeichert sein
 
-  static const int Strasse = 1;
-  static const int Weg = 2;
-  static const int Wald = 3;
-  static const int Berg = 4;
-  static const int Schlucht = 5;
-  static const int Start = 98;
-  static const int Ziel = 99;
-  static const int Path = 0;
+  static const int strasse = 1;
+  static const int weg = 2;
+  static const int wald = 3;
+  static const int berg = 4;
+  static const int schlucht = 5;
+  static const int start = 98;
+  static const int ziel = 99;
+  static const int path = 0;
 
   //
   void updateColor(int x, int y) {
-    if (mode == Start) {
+    if (mode == start) {
       mode = 1;
       updateColor(startX, startY);
       startX = x;
       startY = y;
-      mode = Start;
+      mode = start;
     }
-    if (mode == Ziel) {
+    if (mode == ziel) {
       mode = 1;
       updateColor(endX, endY);
       endX = x;
       endY = y;
-      mode = Ziel;
+      mode = ziel;
     }
     values[x][y] = mode;
   }
 
   Color modeToColor(int m) {
     switch (m) {
-      case Weg:
+      case weg:
         return Colors.yellow;
 
-      case Wald:
+      case wald:
         return Colors.orange;
-
-      case Berg:
+      case berg:
         return Colors.red;
-
-      case Schlucht:
+      case schlucht:
         return Colors.blueGrey;
 
-      case Path:
+      case path:
         return Colors.lightBlueAccent;
 
-      case Start:
+      case start:
         return Colors.purple;
 
-      case Ziel:
+      case ziel:
         return Colors.deepPurple;
 
-      case Strasse:
+      case strasse:
       default:
         return Colors.lightGreen;
     }
@@ -122,7 +125,7 @@ class GridService {
   gridSZ() {
     int b = 0;
     int c = 0;
-    int d = Start;
+    int d = start;
     int speicher = mode;
     var a = Random();
     for (int i = 0; i < 2; i++) {
