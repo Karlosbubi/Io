@@ -93,7 +93,7 @@ class Toolbar extends StatelessWidget {
                         GridService().size = int.parse(content);
                       },
                       onFieldSubmitted: (content) {
-                        GridService().size = int.parse(content!);
+                        GridService().size = int.parse(content);
                         GridService().makeValues(GridService().size);
                       },
                     ),
