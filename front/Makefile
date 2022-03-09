@@ -1,5 +1,5 @@
 comp:
-	rm -rf build/web
+	#rm -rf build/web
 	flutter build web --release
 
 deploy: comp
