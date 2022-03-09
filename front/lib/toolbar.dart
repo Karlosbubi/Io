@@ -21,6 +21,7 @@ class Toolbar extends StatelessWidget {
                   onPressed: () {
                     displaySolve();
                     GridService().update.broadcast();
+                    GridService().gridFill();
                   },
                   child: const Text("Solve"))),
           Container(
