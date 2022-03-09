@@ -1,24 +1,9 @@
-import 'dart:js_util';
-import 'package:flutter/services.dart';
-
 import 'package:flutter/material.dart';
 import 'solve.dart';
 import 'service/grid_service.dart';
 
-class Toolbar extends StatefulWidget {
+class Toolbar extends StatelessWidget {
   const Toolbar({Key? key}) : super(key: key);
-
-  @override
-  State<Toolbar> createState() => _ToolbarState();
-}
-
-class _ToolbarState extends State<Toolbar> {
-  void _refresh(int x) {
-    setState(() {
-      GridService().gridResize(x);
-    });
-    //return 0;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +18,11 @@ class _ToolbarState extends State<Toolbar> {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.deepOrange)),
-                  onPressed: () => displaySolve(),
+                  onPressed: () {
+                    displaySolve();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Solve"))),
-          TextField(
-            keyboardType: TextInputType.number,
-            inputFormatters: <TextInputFormatter>[
-              FilteringTextInputFormatter.digitsOnly
-            ],
-            onChanged: (text) {
-              _refresh(int.parse(text));
-            },
-          ),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
               width: 100,
@@ -51,7 +30,7 @@ class _ToolbarState extends State<Toolbar> {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.yellow)),
-                  onPressed: () {},
+                  onPressed: () => {GridService().update.broadcast()},
                   child: const Text("Resize"))),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
@@ -60,7 +39,10 @@ class _ToolbarState extends State<Toolbar> {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.blueAccent)),
-                  onPressed: () => GridService().gridFill(),
+                  onPressed: () {
+                    GridService().gridFill();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Fill"))),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
@@ -68,7 +50,10 @@ class _ToolbarState extends State<Toolbar> {
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.black)),
-                  onPressed: () => GridService().gridClear(),
+                  onPressed: () {
+                    GridService().gridClear();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Clear"))),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
@@ -76,7 +61,10 @@ class _ToolbarState extends State<Toolbar> {
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.grey)),
-                  onPressed: () => GridService().gridSZ(),
+                  onPressed: () {
+                    GridService().gridSZ();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Random Start/Ziel"))),
         ],
       ),

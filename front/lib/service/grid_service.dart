@@ -137,15 +137,5 @@ class GridService {
 
   gridResize(int a) {
     size = a;
-    values = [];
-
-    for (int x = 0; x < size; x++) {
-      List<int> column = [];
-      for (int y = 0; y < size; y++) {
-        column.add(mode);
-      }
-
-      values.add(column);
-    }
   }
 }
