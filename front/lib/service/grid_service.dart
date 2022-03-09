@@ -44,19 +44,19 @@ class GridService {
 
   //
   void updateColor(int x, int y) {
-    if (mode == 99) {
+    if (mode == Start) {
       mode = 1;
       updateColor(startX, startY);
       startX = x;
       startY = y;
-      mode = 99;
+      mode = Start;
     }
-    if (mode == 100) {
+    if (mode == Ziel) {
       mode = 1;
       updateColor(endX, endY);
       endX = x;
       endY = y;
-      mode = 100;
+      mode = Ziel;
     }
     values[x][y] = mode;
   }
@@ -118,7 +118,7 @@ class GridService {
   gridSZ() {
     int b = 0;
     int c = 0;
-    int d = 98;
+    int d = Start;
     int speicher = mode;
     var a = Random();
     for (int i = 0; i < 2; i++) {
