@@ -1,5 +1,3 @@
-import 'dart:js_util';
-
 import 'package:flutter/material.dart';
 import 'solve.dart';
 import 'service/grid_service.dart';
@@ -20,7 +18,10 @@ class Toolbar extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.deepOrange)),
-                  onPressed: () => displaySolve(),
+                  onPressed: () {
+                    displaySolve();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Solve"))),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
@@ -29,7 +30,7 @@ class Toolbar extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.yellow)),
-                  onPressed: () => {},
+                  onPressed: () => {GridService().update.broadcast()},
                   child: const Text("Resize"))),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
@@ -38,7 +39,10 @@ class Toolbar extends StatelessWidget {
                   style: ButtonStyle(
                       backgroundColor:
                           MaterialStateProperty.all(Colors.blueAccent)),
-                  onPressed: () => GridService().gridFill(),
+                  onPressed: () {
+                    GridService().gridFill();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Fill"))),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
@@ -46,7 +50,10 @@ class Toolbar extends StatelessWidget {
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.black)),
-                  onPressed: () => GridService().gridClear(),
+                  onPressed: () {
+                    GridService().gridClear();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Clear"))),
           Container(
               margin: const EdgeInsets.only(top: 10, bottom: 15),
@@ -54,7 +61,10 @@ class Toolbar extends StatelessWidget {
               child: ElevatedButton(
                   style: ButtonStyle(
                       backgroundColor: MaterialStateProperty.all(Colors.grey)),
-                  onPressed: () => GridService().gridSZ(),
+                  onPressed: () {
+                    GridService().gridSZ();
+                    GridService().update.broadcast();
+                  },
                   child: const Text("Random Start/Ziel"))),
         ],
       ),

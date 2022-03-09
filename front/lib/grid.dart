@@ -13,10 +13,13 @@ class _GridState extends State<Grid> {
     setState(() {
       GridService().updateColor(x, y);
     });
+    //return 0;
   }
 
   @override
   Widget build(BuildContext context) {
+    GridService().update.subscribe((args) => {setState(() {})});
+
     return Container(
       margin: const EdgeInsets.all(10),
       height: MediaQuery.of(context).size.height,

@@ -2,6 +2,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:front/grid.dart';
+// dart code file
+import 'package:event/event.dart';
 
 class GridService {
   static final GridService _singleton = GridService._();
@@ -21,6 +23,8 @@ class GridService {
       values.add(column);
     }
   }
+
+  var update = Event();
 
   int mode = 1;
   int size = 50;
