@@ -6,9 +6,9 @@ Q4 Projekt - Pathfinding Visualiziation
 
 ## TODOs
 
-    - [] Grid
-    - [] Graph
-    - [] Labyrinth
-    - [] Lösen
-    - [] Generieren
-    - [] Vergleichen
+    - [x] Grid
+    - [x] Graph
+    - [x] Labyrinth
+    - [x] Lösen
+    - [x] Generieren
+    - [ ] Vergleichen
