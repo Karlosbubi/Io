@@ -1,6 +1,7 @@
-build:
+comp:
+	rm -rf build/web
 	flutter build web --release
 
-deploy: build
+deploy: comp
 	sudo rm -rf /var/www/*
 	sudo cp -r build/web/* /var/www/
