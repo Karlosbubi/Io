@@ -47,8 +47,8 @@ class _PickerState extends State<Picker> {
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(98))),
-                onPressed: () => update(98),
+                        GridService().modeToColor(GridService.start))),
+                onPressed: () => update(GridService.start),
                 child: const Text("Start")),
           ),
           Container(
@@ -57,8 +57,8 @@ class _PickerState extends State<Picker> {
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(99))),
-                onPressed: () => update(99),
+                        GridService().modeToColor(GridService.ziel))),
+                onPressed: () => update(GridService.ziel),
                 child: const Text("Ziel")),
           ),
           Container(
@@ -75,8 +75,8 @@ class _PickerState extends State<Picker> {
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(1))),
-                onPressed: () => update(1),
+                        GridService().modeToColor(GridService.strasse))),
+                onPressed: () => update(GridService.strasse),
                 child: const Text("Strasse")),
           ),
           Container(
@@ -85,8 +85,8 @@ class _PickerState extends State<Picker> {
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(2))),
-                onPressed: () => update(2),
+                        GridService().modeToColor(GridService.weg))),
+                onPressed: () => update(GridService.weg),
                 child: const Text("Weg")),
           ),
           Container(
@@ -95,8 +95,8 @@ class _PickerState extends State<Picker> {
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(3))),
-                onPressed: () => update(3),
+                        GridService().modeToColor(GridService.wald))),
+                onPressed: () => update(GridService.wald),
                 child: const Text("Wald")),
           ),
           Container(
@@ -105,8 +105,8 @@ class _PickerState extends State<Picker> {
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(4))),
-                onPressed: () => update(4),
+                        GridService().modeToColor(GridService.berg))),
+                onPressed: () => update(GridService.berg),
                 child: const Text("Gebirge")),
           ),
           Container(
@@ -115,8 +115,8 @@ class _PickerState extends State<Picker> {
             child: ElevatedButton(
                 style: ButtonStyle(
                     backgroundColor: MaterialStateProperty.all(
-                        GridService().modeToColor(5))),
-                onPressed: () => update(5),
+                        GridService().modeToColor(GridService.schlucht))),
+                onPressed: () => update(GridService.schlucht),
                 child: const Text("Schlucht")),
           ),
         ],
