@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: const MyHomePage(title: 'Krasser Pathfinder'),
+      home: const MyHomePage(title: 'Dijkstra Path Visualization'),
     );
   }
 }
