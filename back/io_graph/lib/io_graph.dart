@@ -1,7 +1,7 @@
 library io_graph;
 
 import 'dart:core';
-import 'dart:math';
+//import 'dart:math';
 
 // ignore: constant_identifier_names
 const int INT_MAX = 9007199254740991;
@@ -54,7 +54,7 @@ class Graph<T> {
     return path;
   }
 
-  List<Node<T>> aStar(Node<T> start, Node<T> end) {
+  /*List<Node<T>> aStar(Node<T> start, Node<T> end) {
     List<Node<T>> checking = {start}.toList();
     List<Node<T>> checkNext = List.empty(growable: true);
 
@@ -100,6 +100,7 @@ class Graph<T> {
 
     return path;
   }
+  */
 
   /*@override
   String toString() {

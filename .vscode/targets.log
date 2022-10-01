@@ -8,7 +8,7 @@ make: *** No rule to make target 'all'.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Wed Mar 16 10:32:28 2022
+# Make data base, printed on Thu Mar 17 13:56:21 2022
 
 # Variables
 
@@ -21,7 +21,7 @@ NO_AT_BRIDGE = 1
 # environment
 GJS_DEBUG_OUTPUT = stderr
 # environment
-VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5783ec63-034a-4bd7-bd45-6cd6eba6252f.sock
+VSCODE_IPC_HOOK_EXTHOST = /run/user/1000/vscode-ipc-5a08a1be-ca56-4904-a71d-edb861f87426.sock
 # environment
 LC_NUMERIC = de_DE.UTF-8
 # environment
@@ -63,7 +63,7 @@ VSCODE_CODE_CACHE_PATH = /home/kurt/.config/Code/CachedData/8908a9ca0f221f365072
 # environment
 LANG = C
 # environment
-XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.YZFNJ1
+XAUTHORITY = /run/user/1000/.mutter-Xwaylandauth.XK02I1
 # default
 .LOADED := 
 # default
@@ -105,7 +105,7 @@ ZSH = /home/kurt/.oh-my-zsh
 # environment
 VSCODE_VERBOSE_LOGGING = true
 # environment
-VSCODE_PID = 2583
+VSCODE_PID = 3913
 # environment
 SDL_VIDEO_MINIMIZE_ON_FOCUS_LOSS = 0
 # environment
@@ -113,7 +113,7 @@ XDG_SESSION_TYPE = wayland
 # automatic
 ?D = $(patsubst %/,%,$(dir $?))
 # environment
-SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1747,unix/unix:/tmp/.ICE-unix/1747
+SESSION_MANAGER = local/unix:@/tmp/.ICE-unix/1744,unix/unix:/tmp/.ICE-unix/1744
 # automatic
 *F = $(notdir $*)
 # environment
@@ -155,7 +155,7 @@ LC_MONETARY = de_DE.UTF-8
 # environment
 LC_TIME = de_DE.UTF-8
 # environment
-INVOCATION_ID = e28cd49016ec4584b38996e7c73d7cff
+INVOCATION_ID = 18141b3a25c34e29b722ad388fea6a36
 # environment
 VSCODE_LOG_NATIVE = false
 # environment
@@ -187,7 +187,7 @@ GIO_LAUNCHED_DESKTOP_FILE = /usr/share/applications/code.desktop
 # makefile
 .DEFAULT_GOAL := 
 # environment
-SYSTEMD_EXEC_PID = 1786
+SYSTEMD_EXEC_PID = 1775
 # environment
 HISTCONTROL = ignoredups
 # environment
@@ -199,7 +199,7 @@ USER = kurt
 # default
 MAKE_VERSION := 4.3
 # environment
-MANAGERPID = 1646
+MANAGERPID = 1640
 # environment
 which_declare = typeset -f
 # environment
@@ -207,7 +207,7 @@ LC_MEASUREMENT = de_DE.UTF-8
 # environment
 DEBUGINFOD_URLS = https://debuginfod.fedoraproject.org/ 
 # environment
-GIO_LAUNCHED_DESKTOP_FILE_PID = 2583
+GIO_LAUNCHED_DESKTOP_FILE_PID = 3913
 # environment
 PAGER = less
 # environment
@@ -217,7 +217,7 @@ LC_PAPER = de_DE.UTF-8
 # environment
 XDG_RUNTIME_DIR = /run/user/1000
 # environment
-JOURNAL_STREAM = 8:35064
+JOURNAL_STREAM = 8:33465
 # environment
 XDG_SESSION_CLASS = user
 # environment
@@ -251,7 +251,7 @@ GDMSESSION = gnome
 
 # Directories
 
-# . (device 34, inode 1246296): 8 files, no impossibilities.
+# . (device 40, inode 1246296): 8 files, no impossibilities.
 
 # 8 files, no impossibilities in 1 directories.
 
@@ -310,6 +310,6 @@ GNUmakefile:
 # strcache performance: lookups = 19 / hit rate = 15%
 # hash-table stats:
 # Load=16/8192=0%, Rehash=0, Collisions=0/19=0%
-# Finished Make data base on Wed Mar 16 10:32:28 2022
+# Finished Make data base on Thu Mar 17 13:56:22 2022
 
  
